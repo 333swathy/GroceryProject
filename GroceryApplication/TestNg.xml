@@ -1,0 +1,24 @@
+<suite name="myTestSuite">
+	<parameter name="browser" value="Chrome"></parameter>
+	<listeners>
+		<listener class-name="listeners.Listeners"></listener>
+		<!-- <listener class-name="listeners.RetryListener"></listener>-->
+	</listeners>
+	<test name="myTest">
+		<classes>
+
+			 <!--<class name="testscript.SubCategoryTest">
+				 <methods>
+					<include
+						name="verifyAddNewSubCategoryWithValidDetails"></include>
+				</methods>
+			</class>-->
+
+			<class name="testscript.CategoryTest">
+				<methods>
+					<include name="verifyUserCanUpdateImage"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

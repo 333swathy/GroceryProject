@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-18T15:03:51 IST" name="myTestSuite" finished-at="2025-02-18T15:04:04 IST" duration-ms="12646">
+    <groups>
+    </groups>
+    <test started-at="2025-02-18T15:03:51 IST" name="myTest" finished-at="2025-02-18T15:04:04 IST" duration-ms="12646">
+      <class name="testscript.CategoryTest">
+        <test-method is-config="true" signature="initialiseBrowser(java.lang.String)[pri:0, instance:testscript.CategoryTest@2ad48653]" started-at="2025-02-18T15:03:51 IST" name="initialiseBrowser" finished-at="2025-02-18T15:03:58 IST" duration-ms="6621" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseBrowser -->
+        <test-method signature="verifyUserCanUpdateImage()[pri:0, instance:testscript.CategoryTest@2ad48653]" started-at="2025-02-18T15:03:58 IST" name="verifyUserCanUpdateImage" finished-at="2025-02-18T15:04:04 IST" duration-ms="5905" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserCanUpdateImage -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.CategoryTest@2ad48653]" started-at="2025-02-18T15:04:04 IST" name="driverQuit" finished-at="2025-02-18T15:04:04 IST" duration-ms="9" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserCanUpdateImage status=SUCCESS method=CategoryTest.verifyUserCanUpdateImage()[pri:0, instance:testscript.CategoryTest@2ad48653] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testscript.CategoryTest -->
+    </test> <!-- myTest -->
+  </suite> <!-- myTestSuite -->
+</testng-results>

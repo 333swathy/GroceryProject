@@ -1,0 +1,28 @@
+<suite name="cross-browser testing" parallel="tests" thread-count="2">
+	
+	
+	<test thread-count="5" name="chromeTest">
+	<parameter name="browser" value="Chrome"></parameter>
+		<classes>
+
+			<class name="testscript.LoginTest">
+				<methods>
+					<include
+						name="verifyUserLoginWithInvalidUsernameAndValidPassword"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test thread-count="5" name="edge-test">
+	<parameter name="browser" value="Edge"></parameter>
+		<classes>
+
+			<class name="testscript.AdminUserTest">
+				<methods>
+					<include
+						name="verifyIfNewUseInfoCanAdd"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
