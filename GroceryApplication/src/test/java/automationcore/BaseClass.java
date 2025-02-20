@@ -2,7 +2,6 @@ package automationcore;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -30,7 +29,7 @@ public class BaseClass {
 		prop = new Properties();
 		fs = new FileInputStream(Constants.CONFIGFILE);
 		prop.load(fs);
-		if (browser.equalsIgnoreCase("Chrome")) {
+		if (browser.equalsIgnoreCase("Chrome")) { 
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("Edge")) {
 			driver = new EdgeDriver();
@@ -46,13 +45,13 @@ public class BaseClass {
 		
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void driverQuit(ITestResult itestresult) throws IOException {
 		if (itestresult.getStatus() == ITestResult.FAILURE) {
 			ScreenShotUtility screenshot = new ScreenShotUtility();
 			screenshot.captureFailureScreenShot(driver, itestresult.getName());
 		}
-		// driver.quit();
+		driver.quit();
 		// driver.close();
 	}
 

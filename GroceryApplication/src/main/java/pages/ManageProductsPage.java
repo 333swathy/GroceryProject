@@ -18,7 +18,7 @@ public class ManageProductsPage {
 	FileUploadUtility fileupload=new FileUploadUtility();
 
 	public ManageProductsPage(WebDriver driver) {
-		this.driver = driver;
+		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
 
@@ -70,7 +70,7 @@ public class ManageProductsPage {
 	WebElement alertMessage;
 	@FindBy(xpath="//a[@class='btn btn-sm btn btn-danger btncss'][1]")WebElement deleteButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement deleteAlertMessage;
-	@FindBy(xpath="//span[@class='badge btn btn-xs bg-success']")List<WebElement>  featureStatusButton;
+	@FindBy(xpath="//a[@role='button']")List<WebElement>  featureStatusButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement statusAlert;
 	
 	

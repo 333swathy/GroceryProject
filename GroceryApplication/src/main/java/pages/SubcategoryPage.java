@@ -44,7 +44,7 @@ public class SubcategoryPage {
 	WebElement tableElement;
 	@FindBy(xpath = "//input[@id='main_img']")
 	WebElement imageupload;
-	@FindBy(xpath = "//span[@class='badge bg-success'][1]")
+	@FindBy(xpath = "//a[@role='button']")
 	WebElement activeButton;
 	@FindBy(xpath = "//input[@class='form-control']")
 	WebElement subCategoryField1;
@@ -86,7 +86,7 @@ public class SubcategoryPage {
 		return this;
 	}
 
-	public boolean isAlertDisplayed() {
+	public boolean isAlertDisplayed() { 
 		return alertMessage.isDisplayed();
 	}
 
@@ -105,6 +105,7 @@ public class SubcategoryPage {
 
 	public SubcategoryPage clickOnsearchButtonForSelectDropdown() {
 		searchButtobForSelectDropdown.click();
+		waitutility.waitUntilElementIsVisible(driver, searchButtobForSelectDropdown);
 		return this;
 	}
 
@@ -121,7 +122,7 @@ public class SubcategoryPage {
 	}
 
 	public SubcategoryPage enterSubCategoryOnField() {
-		subCategoryField1.sendKeys("mmaaiitthhrrii");
+		subCategoryField1.sendKeys("mmaaiitthhrri");
 		waitutility.waitUntilElementIsVisible(driver, subCategoryField1);
 		return this;
 	}

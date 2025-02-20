@@ -37,7 +37,7 @@ public class AdminUserPage {
 	@FindBy(xpath="//button[@class='btn btn-block-sm btn-info']")WebElement updateButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement updateAlertMessage;
 	//@FindBy(xpath = "//a[@class='btn btn-sm btn btn-success btncss'][1]")WebElement statusUnlock;
-	@FindBy(xpath = "//a[@class='btn btn-sm btn btn-success btncss']")
+	@FindBy(xpath = "//a[@role='button']")
 	 List<WebElement> statusUnlock;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement statusAlertMessage;
 	

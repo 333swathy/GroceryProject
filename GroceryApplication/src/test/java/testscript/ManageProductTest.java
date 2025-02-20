@@ -15,7 +15,7 @@ import pages.ManageProductsPage;
 public class ManageProductTest extends BaseClass {
 	Loginpage login;
 	HomePage homepage;
-	ManageProductsPage manageproduct;
+	ManageProductsPage manageproduct; 
 
 	@Test
 	public void verifyIfUserCanAddNewManagrProductWithoutMandatoryFields() throws IOException, AWTException {

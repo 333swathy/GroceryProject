@@ -11,7 +11,6 @@ import constants.Constants;
 import pages.CategoryPage;
 import pages.HomePage;
 import pages.Loginpage;
-import pages.SubcategoryPage;
 
 public class CategoryTest extends BaseClass {
 

@@ -7,18 +7,18 @@
 	<test name="myTest">
 		<classes>
 
-			 <!--<class name="testscript.SubCategoryTest">
-				 <methods>
+			<!-- <class name="testscript.AdminUserTest"></class>
+			
+			<methods>
 					<include
-						name="verifyAddNewSubCategoryWithValidDetails"></include>
-				</methods>
-			</class>-->
+						name="verifyIfUserInfoCanUpdateStatus"></include>
+				</methods>-->
+			   <class name="testscript.LoginTest"></class>
+			    <class name="testscript.AdminUserTest"></class>
+			 	 <class name="testscript.SubCategoryTest"></class>
+				 <class name="testscript.CategoryTest"></class>
 
-			<class name="testscript.CategoryTest">
-				<methods>
-					<include name="verifyUserCanUpdateImage"></include>
-				</methods>
-			</class>
+			<class name="testscript.ManageProductTest"></class>
 		</classes>
 	</test>
 </suite>

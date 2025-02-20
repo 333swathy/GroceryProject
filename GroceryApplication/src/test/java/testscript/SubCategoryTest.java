@@ -44,8 +44,8 @@ public class SubCategoryTest extends BaseClass {
 		login = new Loginpage(driver);
 		homepage=login.loginUsingExcelData();
 		subcategory=homepage.clickOnSubCategory().clickOnSearchButton().clickOnCategoryDropDownofSearch()
-				.enterSubCategoryOnField().clickOnsearchButtonForSelectDropdown().clickOnActiveStatusButton();
+				.clickOnsearchButtonForSelectDropdown().clickOnActiveStatusButton();
 		boolean isAlertPresent = subcategory.isAlertDisplayed2();
 		Assert.assertTrue(isAlertPresent, Constants.SC_verifyUserCanUpdateTheSubcategoryStatus );
-	}
+	}//.enterSubCategoryOnField()
 }

@@ -2,8 +2,6 @@ package testscript;
 
 import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import automationcore.BaseClass;
@@ -11,8 +9,6 @@ import constants.Constants;
 import pages.AdminUserPage;
 import pages.HomePage;
 import pages.Loginpage;
-import utilities.PageUtility;
-import utilities.WaitUtilities;
 
 public class AdminUserTest extends BaseClass {
 	Loginpage login;
@@ -50,7 +46,7 @@ public class AdminUserTest extends BaseClass {
 		boolean isAlertPresent=adminuser.isAlertDisplayed3();
 		Assert.assertTrue(isAlertPresent,Constants.AU_verifyUserCanEditAndUpdateUserDetails);
 	}
-	@Test
+	@Test 
 	public void verifyIfUserInfoCanUpdateStatus() throws IOException
 	{
 		login = new Loginpage(driver);
