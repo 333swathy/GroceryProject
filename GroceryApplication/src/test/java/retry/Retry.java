@@ -8,18 +8,19 @@ import org.testng.ITestResult;
 public class Retry implements IRetryAnalyzer {
 	private static final Logger LOG = LogManager.getLogger("Retry.class");
 	private static final int maxTry = 2;
-	private int count = 0;//tracks no:of retry attempts
+	private int count = 0;// tracks no:of retry attempts
 
-	public boolean retry(final ITestResult iTestResult) {
+	public boolean retry(final ITestResult iTestResult) //This method determines if a test should be retried.
+	{
 		if (!iTestResult.isSuccess()) {
 			if (this.count < maxTry) {
 				LOG.info("Retrying test " + iTestResult.getName() + " with status "
 						+ getResultStatusName(iTestResult.getStatus()) + " for the " + (this.count + 1) + " time(s).");
 				this.count++;
-				return true;//indicate a retry attempt
+				return true;// indicate a retry attempt
 			}
 		}
-		return false;//no more retry ie, test success
+		return false;// no more retry ie, test success
 	}
 
 	public String getResultStatusName(final int status) {

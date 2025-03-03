@@ -18,18 +18,18 @@ import utilities.ScreenShotUtility;
 import utilities.WaitUtilities;
 
 public class BaseClass {
-	Properties prop;
+	Properties prop;//Stores browser and application settings from the config file.
 	FileInputStream fs;
-	public WebDriver driver;
+	public WebDriver driver;//Controls the browser.
 	WaitUtilities waitutility = new WaitUtilities();
 
-	@BeforeMethod(alwaysRun=true)
-	@Parameters("browser")
+	@BeforeMethod(alwaysRun = true)//alwaysRun = true ensures it runs even if groups are used.
+	@Parameters("browser")//Retrieves the browser name from the TestNG XML file
 	public void initialiseBrowser(String browser) throws Exception {
 		prop = new Properties();
 		fs = new FileInputStream(Constants.CONFIGFILE);
 		prop.load(fs);
-		if (browser.equalsIgnoreCase("Chrome")) { 
+		if (browser.equalsIgnoreCase("Chrome")) {
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("Edge")) {
 			driver = new EdgeDriver();
@@ -40,12 +40,12 @@ public class BaseClass {
 		}
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
-		driver.manage().window().minimize();
+
 		waitutility.implicitWait(driver);
-		
+
 	}
 
-	@AfterMethod(alwaysRun=true)
+	@AfterMethod(alwaysRun = true)
 	public void driverQuit(ITestResult itestresult) throws IOException {
 		if (itestresult.getStatus() == ITestResult.FAILURE) {
 			ScreenShotUtility screenshot = new ScreenShotUtility();

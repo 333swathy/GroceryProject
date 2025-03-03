@@ -55,7 +55,8 @@ public class CategoryPage {
 	WebElement statusbutton;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement statusAlertMessage;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement newCategryAlert;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement newCategryAlert;
 
 	public CategoryPage clickOnNewCategoryButton() {
 		waitutility.waitUntilElementToBeClickable(driver, newCategoryButton);
@@ -116,16 +117,17 @@ public class CategoryPage {
 
 	public CategoryPage chooseNewImage() throws AWTException {
 		String image2 = System.getProperty("user.dir") + "\\src\\test\\resources\\images\\harukki.jpg";
-		//pageutility.clickJavaScriptExecutor(imageFiled, driver);
-		//String image2 = "C:\\Users\\GOKUL\\git\\GroceryProject\\GroceryApplication\\src\\test\\resources\\images\\harukki.jpg";
+		// pageutility.clickJavaScriptExecutor(imageFiled, driver);
+		// String image2 =
+		// "C:\\Users\\GOKUL\\git\\GroceryProject\\GroceryApplication\\src\\test\\resources\\images\\harukki.jpg";
 		fileupload.fileuploadusingsendkeys(chooseFileForEdit, image2);
-		//waitutility.waitForImageToBeVisible(driver, chooseFileForEdit);
+		// waitutility.waitForImageToBeVisible(driver, chooseFileForEdit);
 		return this;
 	}
 
 	public CategoryPage clickOnUpdateButton() {
 		pageutility.clickJavaScriptExecutor(updateButton, driver);
-		//waitutility.waitUntilElementToBeClickable(driver, updateButton);
+		// waitutility.waitUntilElementToBeClickable(driver, updateButton);
 		return this;
 	}
 
@@ -141,6 +143,7 @@ public class CategoryPage {
 	public boolean isAlertDisplayedForStatus() {
 		return statusAlertMessage.isDisplayed();
 	}
+
 	public boolean isAlertDisplayedForNewCategory() {
 		return newCategryAlert.isDisplayed();
 	}

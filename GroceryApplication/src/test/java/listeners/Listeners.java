@@ -14,14 +14,17 @@ import utilities.ExtentReportUtility;
 
 public class Listeners extends BaseClass implements ITestListener {
 	ExtentTest test; // represents a single test in the report.
-	ExtentReports extent = ExtentReportUtility.createExtentReports();
-	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	ExtentReports extent = ExtentReportUtility.createExtentReports();// Calls createExtentReports() from
+																		// ExtentReportUtility
+																		// to get a configured ExtentReports instance.
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();//Prevents concurrency issues in parallel execution.
 
 	public void onTestStart(ITestResult result) {
 
-		ITestListener.super.onTestStart(result);
-		test = extent.createTest(result.getMethod().getMethodName());
-		extentTest.set(test);
+		ITestListener.super.onTestStart(result);// Calls the default implementation of onTestStart.
+		test = extent.createTest(result.getMethod().getMethodName());// create new entry in the report
+		extentTest.set(test);// stores the test instance in ThreadLocal for thread safety.
+
 	}
 
 	public void onTestSuccess(ITestResult result) {
@@ -40,33 +43,22 @@ public class Listeners extends BaseClass implements ITestListener {
 		try {
 			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver")
 					.get(result.getInstance());
-		}
-		catch (IllegalArgumentException e) 
-		{
+		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
-		} 
-		catch (IllegalAccessException e)
-        {
+		} catch (IllegalAccessException e) {
 			e.printStackTrace();
-		} 
-		catch (NoSuchFieldException e) 
-		{
+		} catch (NoSuchFieldException e) {
 
 			e.printStackTrace();
-		}
-		catch (SecurityException e)
-		{
+		} catch (SecurityException e) {
 
 			e.printStackTrace();
 		}
 
-		try 
-		{
+		try {
 			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver")
 					.get(result.getInstance());
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 		}
 	}
 
@@ -76,22 +68,22 @@ public class Listeners extends BaseClass implements ITestListener {
 		// String testMethodName = result.getMethod().getMethodName();
 	}
 
-	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {//rarely used
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {// rarely used
 		ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
 	}
 
-	public void onTestFailedWithTimeout(ITestResult result) {//failed due to time out
+	public void onTestFailedWithTimeout(ITestResult result) {// failed due to time out
 		ITestListener.super.onTestFailedWithTimeout(result);
 	}
 
-	public void onStart(ITestContext context) {//call on start
+	public void onStart(ITestContext context) {// call on start
 		ITestListener.super.onStart(context);
 	}
 
-	public void onFinish(ITestContext context) {//call on fininsh @end
+	public void onFinish(ITestContext context) {// call on fininsh @end
 
 		ITestListener.super.onFinish(context);
-		extent.flush();//save and write all collected log and test details saved into final report
+		extent.flush();// save and write all collected log and test details saved into final report
 	}
 
 }

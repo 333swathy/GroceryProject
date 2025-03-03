@@ -28,10 +28,10 @@ public class SubCategoryTest extends BaseClass {
 	}
 
 	@Test
-	public void verifyUserCanSearchForListSubcategory() throws IOException {
+	public void verifyUserCanSearchForSubcategory() throws IOException {
 		login = new Loginpage(driver);
 		homepage = login.loginUsingExcelData();
-		subcategory=homepage.clickOnSubCategory().clickOnSearchButton().clickOnCategoryDropDownofSearch()
+		subcategory = homepage.clickOnSubCategory().clickOnSearchButton().clickOnCategoryDropDownofSearch()
 				.clickOnsearchButtonForSelectDropdown();
 		String actualResult = subcategory.elementSearchInTable();
 		String expectedResult = "Toys";
@@ -42,10 +42,10 @@ public class SubCategoryTest extends BaseClass {
 	@Test
 	public void verifySubCategoryStatusCanChange() throws IOException {
 		login = new Loginpage(driver);
-		homepage=login.loginUsingExcelData();
-		subcategory=homepage.clickOnSubCategory().clickOnSearchButton().clickOnCategoryDropDownofSearch()
+		homepage = login.loginUsingExcelData();
+		subcategory = homepage.clickOnSubCategory().clickOnSearchButton().clickOnCategoryDropDownofSearch()
 				.clickOnsearchButtonForSelectDropdown().clickOnActiveStatusButton();
 		boolean isAlertPresent = subcategory.isAlertDisplayed2();
-		Assert.assertTrue(isAlertPresent, Constants.SC_verifyUserCanUpdateTheSubcategoryStatus );
-	}//.enterSubCategoryOnField()
+		Assert.assertTrue(isAlertPresent, Constants.SC_verifyUserCanUpdateTheSubcategoryStatus);
+	}// .enterSubCategoryOnField()
 }

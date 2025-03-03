@@ -12,13 +12,13 @@ import constants.Constants;
 import pages.Loginpage;
 
 public class LoginTest extends BaseClass {
-	@Test(groups={"smoke"})
+	@Test(groups = { "smoke" })
 	public void verifyUserLoginWithValidCredentials() throws IOException {
 		Loginpage login = new Loginpage(driver);
 		login.loginUsingExcelData();
 		boolean expectedResult = true;
 		boolean actualResult = login.isHomePageLoaded();
-		Assert.assertEquals(actualResult, expectedResult,Constants.lp_verifyLoginWithValidCredentials);
+		Assert.assertEquals(actualResult, expectedResult, Constants.lp_verifyLoginWithValidCredentials);
 	}
 
 	@Test
@@ -48,7 +48,7 @@ public class LoginTest extends BaseClass {
 		return new Object[][] { { "abcf", "223" }, { "bsh", "333" }, { "shgjgh", "333" }, { "gsvgh", "555" } };
 	}
 
-	@Test(groups="smoke")
+	@Test(groups = "smoke")
 	public void verifyUserLoginWithInvalidUsernameAndInvalidPassword() {
 		Loginpage login = new Loginpage(driver);
 		String username = "swathy";

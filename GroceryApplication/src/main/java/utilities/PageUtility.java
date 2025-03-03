@@ -149,18 +149,13 @@ public class PageUtility {
 			if (row.getText().contains(searchText)) {
 				System.out.println("Element found: " + row.getText());
 				return true;
-				
+
 			}
-			
+
 		}
 
 		System.out.println("Element not found.");
 		return false;
-	}
-
-	public void uploadImage(WebElement imageupload, String imagePath) {
-		imageupload.sendKeys(imagePath);
-
 	}
 
 	public void selectRadioButton(WebElement radiobutton) {

@@ -6,19 +6,20 @@ import com.github.javafaker.Faker;
 import com.github.javafaker.PhoneNumber;
 
 public class FakerUtility {
-	Faker faker=new Faker();
-	public String generateName()
-	{
+	Faker faker = new Faker();
+
+	public String generateName() {
 		return faker.name().fullName();
 	}
-	public String generateAddress()
-	{
+
+	public String generateAddress() {
 		return faker.address().fullAddress();
 	}
-	public PhoneNumber generatePhoneNumber()
-	{
+
+	public PhoneNumber generatePhoneNumber() {
 		return faker.phoneNumber();
 	}
+
 	public String generateEmailAddress() {
 		return faker.internet().emailAddress();
 	}
@@ -34,8 +35,8 @@ public class FakerUtility {
 	public String generateCompanyName() {
 		return faker.company().name();
 	}
-	public long generateRandomNumber()
-	{	
+
+	public long generateRandomNumber() {
 		return faker.number().randomNumber();
 	}
 

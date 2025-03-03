@@ -25,8 +25,8 @@ public class CategoryTest extends BaseClass {
 		category = homepage.clickOnCategory().clickOnNewCategoryButton().enterNameOnCategoryField()
 				.clickOnDiscountField().uploadImageOnImageField().clicktopMenuRadioButton().clickLeftMenuRadioButton()
 				.clickOnSaveButton();
-		boolean expectedResult=category.isAlertDisplayedForNewCategory();
-		Assert.assertTrue(expectedResult, Constants. C_verifyAddNewCategorywithValidDetails);
+		boolean expectedResult = category.isAlertDisplayedForNewCategory();
+		Assert.assertTrue(expectedResult, Constants.C_verifyAddNewCategorywithValidDetails);
 	}
 
 	@Test
@@ -41,8 +41,8 @@ public class CategoryTest extends BaseClass {
 	@Test
 	public void verifeUserCanUpdateStatus() throws IOException {
 		login = new Loginpage(driver);
-		homepage =login.loginUsingExcelData();
-		category =homepage.clickOnCategory().clickOnStatusButton();
+		homepage = login.loginUsingExcelData();
+		category = homepage.clickOnCategory().clickOnStatusButton();
 		boolean expectedResult = category.isAlertDisplayedForStatus();
 		Assert.assertTrue(expectedResult, Constants.C_verifyUserUpdateCategoyStatus);
 	}

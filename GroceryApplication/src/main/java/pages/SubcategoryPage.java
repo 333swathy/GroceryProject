@@ -86,7 +86,7 @@ public class SubcategoryPage {
 		return this;
 	}
 
-	public boolean isAlertDisplayed() { 
+	public boolean isAlertDisplayed() {
 		return alertMessage.isDisplayed();
 	}
 

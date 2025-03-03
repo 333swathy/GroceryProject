@@ -15,10 +15,10 @@ public class ManageProductsPage {
 	WebDriver driver;
 	PageUtility pageutility = new PageUtility();
 	WaitUtilities waitutility = new WaitUtilities();
-	FileUploadUtility fileupload=new FileUploadUtility();
+	FileUploadUtility fileupload = new FileUploadUtility();
 
 	public ManageProductsPage(WebDriver driver) {
-		this.driver = driver; 
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -68,12 +68,15 @@ public class ManageProductsPage {
 	WebElement saveButton;
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 	WebElement alertMessage;
-	@FindBy(xpath="//a[@class='btn btn-sm btn btn-danger btncss'][1]")WebElement deleteButton;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement deleteAlertMessage;
-	@FindBy(xpath="//a[@role='button']")List<WebElement>  featureStatusButton;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement statusAlert;
-	
-	
+	@FindBy(xpath = "//a[@class='btn btn-sm btn btn-danger btncss'][1]")
+	WebElement deleteButton;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement deleteAlertMessage;
+	@FindBy(xpath = "//a[@role='button']")
+	List<WebElement> featureStatusButton;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement statusAlert;
+
 	public ManageProductsPage clickOnNewManageProductButton() {
 		newManageProductButton.click();
 		return this;
@@ -168,7 +171,7 @@ public class ManageProductsPage {
 		fileupload.fileuploadusingsendkeys(imageChooseFileButton, image);
 		waitutility.waitForImageToBeVisible(driver, imageChooseFileButton);
 		return this;
-		
+
 	}
 
 	public ManageProductsPage uplaodSubImages() {
@@ -201,20 +204,23 @@ public class ManageProductsPage {
 	public boolean isAlertDisplayed() {
 		return alertMessage.isDisplayed();
 	}
-	public ManageProductsPage clickDeleteButton()
-	{
+
+	public ManageProductsPage clickDeleteButton() {
 		pageutility.clickJavaScriptExecutor(deleteButton, driver);
 		driver.switchTo().alert().accept();
 		return this;
+		
 	}
+
 	public boolean isAlertDisplayed2() {
 		return deleteAlertMessage.isDisplayed();
 	}
-	public ManageProductsPage clickOnFeatureButton()
-	{
+
+	public ManageProductsPage clickOnFeatureButton() {
 		pageutility.clickJavaScriptExecutor(featureStatusButton.get(0), driver);
 		return this;
 	}
+
 	public boolean isAlertDisplayed3() {
 		return statusAlert.isDisplayed();
 	}

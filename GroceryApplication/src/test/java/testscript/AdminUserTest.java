@@ -18,47 +18,40 @@ public class AdminUserTest extends BaseClass {
 	@Test
 	public void verifyIfNewUserInfoCanAdd() throws IOException {
 		login = new Loginpage(driver);
-		homepage=login.loginUsingExcelData();
-		adminuser=homepage.clickOnAdminUserMoreInfoFooter().clickOnnewAdminUserButton().enterNewUsernameOnField()
+		homepage = login.loginUsingExcelData();
+		adminuser = homepage.clickOnAdminUserMoreInfoFooter().clickOnnewAdminUserButton().enterNewUsernameOnField()
 				.enterNewPasswordOnField().chooseTypeFromTypeDropdown().clickOnSaveButton();
-		boolean isAlertPresent=adminuser.isAlertDisplayed();
+		boolean isAlertPresent = adminuser.isAlertDisplayed();
 		Assert.assertTrue(isAlertPresent, Constants.AU_verifyAddNewAdminUserwithValidDetails);
-	
 
 	}
+
 	@Test
-	public void verifyIfUserInfoCanDelete() throws IOException
-	{
+	public void verifyIfUserInfoCanDelete() throws IOException {
 		login = new Loginpage(driver);
-		homepage=login.loginUsingExcelData();
-		adminuser=homepage.clickOnAdminUserMoreInfoFooter().clickDeleteButtonOfUserList();
-		//driver.switchTo().alert().accept();
-		boolean isAlertPresent=adminuser.isAlertDisplayed2();
+		homepage = login.loginUsingExcelData();
+		adminuser = homepage.clickOnAdminUserMoreInfoFooter().clickDeleteButtonOfUserList();
+		boolean isAlertPresent = adminuser.isAlertDisplayed2();
 		Assert.assertTrue(isAlertPresent, Constants.AU_verifyUserCanDeletAdminUser);
 	}
+
 	@Test
-	public void verifyIfUserInfoCanEdit() throws IOException
-	{
+	public void verifyIfUserInfoCanEdit() throws IOException {
 		login = new Loginpage(driver);
-		homepage=login.loginUsingExcelData();
-	    adminuser=homepage.clickOnAdminUserMoreInfoFooter().clickOnEditButton().enterNewUsernameOnField()
-	    		.enterNewPasswordOnField().clickOnUpdateButton();
-		boolean isAlertPresent=adminuser.isAlertDisplayed3();
-		Assert.assertTrue(isAlertPresent,Constants.AU_verifyUserCanEditAndUpdateUserDetails);
+		homepage = login.loginUsingExcelData();
+		adminuser = homepage.clickOnAdminUserMoreInfoFooter().clickOnEditButton().enterNewUsernameOnField()
+				.enterNewPasswordOnField().clickOnUpdateButton();
+		boolean isAlertPresent = adminuser.isAlertDisplayed3();
+		Assert.assertTrue(isAlertPresent, Constants.AU_verifyUserCanEditAndUpdateUserDetails);
 	}
-	@Test 
-	public void verifyIfUserInfoCanUpdateStatus() throws IOException
-	{
+
+	@Test
+	public void verifyIfUserInfoCanUpdateStatus() throws IOException {
 		login = new Loginpage(driver);
-		homepage=login.loginUsingExcelData();
-		adminuser=homepage.clickOnAdminUserMoreInfoFooter().clickOnStatusFirstSuccessButton();
+		homepage = login.loginUsingExcelData();
+		adminuser = homepage.clickOnAdminUserMoreInfoFooter().clickOnStatusFirstSuccessButton();
 		adminuser.clickOnStatusFirstSuccessButton();
-		boolean isAlertPresent=adminuser.isAlertDisplayed4();
-		Assert.assertTrue(isAlertPresent,Constants.AU_verifyUserUpdateStausOfUserDetails);
+		boolean isAlertPresent = adminuser.isAlertDisplayed4();
+		Assert.assertTrue(isAlertPresent, Constants.AU_verifyUserUpdateStausOfUserDetails);
 	}
 }
-	
-		
-		
-		
-		
